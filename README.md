@@ -1,4 +1,0 @@
-InterviewHangout
-================
-
-Google Hangout + InterviewStreet
