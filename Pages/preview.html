@@ -50,16 +50,12 @@
 </html></textarea>
     <iframe id=preview></iframe>
     <script>
-      var delay;
-      // Initialize TimePass editor with a nice html5 canvas demo.
-      var editor = TimePass.fromTextArea(document.getElementById('code'), {
-        mode: 'text/html',
-        tabMode: 'indent',
-        onChange: function() {
-          clearTimeout(delay);
-          delay = setTimeout(updatePreview, 300);
-        }
-      });
+        var default_statment = "Enter Your Code Here";
+        var editor = CodeMirror.fromTextArea(document.getElementById("codetext"), {
+        lineNumbers: true,
+        mode: LANGUAGE_MODE_MAP[selected_lang],
+        matchBrackets: true,
+        });
       
       function updatePreview() {
         var previewFrame = document.getElementById('preview');
