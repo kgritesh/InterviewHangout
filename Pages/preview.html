@@ -3,11 +3,11 @@
   <head>
     <title>TimePass: HTML5 preview</title>
     <meta charset=utf-8>
-    <script src=/Users/vipulkanade/Documents/TimePass.js></script>
-    <script src=/Users/vipulkanade/Documents/xml.js></script>
-    <script src=/Users/vipulkanade/Documents/javascript.js></script>
-    <script src=/Users/vipulkanade/Documents/css.js></script>
-    <script src=/Users/vipulkanade/Documents/htmlmixed.js></script>
+    <script src=/Users/vipulkanade/Documents/Pages/TimePass.js></script>
+    <script src=/Users/vipulkanade/Documents/Pages/xml.js></script>
+    <script src=/Users/vipulkanade/Documents/Pages/javascript.js></script>
+    <script src=/Users/vipulkanade/Documents/Pages/css.js></script>
+    <script src=/Users/vipulkanade/Documents/Pages/htmlmixed.js></script>
     <style type=text/css>
       .TimePass {
         float: left;
@@ -25,47 +25,15 @@
   </head>
   <body>
     <h1>TimePass: HTML5 preview</h1>
-    <textarea id=code name=code>
-<!doctype html>
-<html>
-  <head>
-    <meta charset=utf-8>
-    <title>HTML5 canvas demo</title>
-    <style>p {font-family: monospace;}</style>
-  </head>
-  <body>
-    <p>Canvas pane goes here:</p>
-    <canvas id=pane width=300 height=200></canvas>
-    <script>
-      var canvas = document.getElementById('pane');
-      var context = canvas.getContext('2d');
-
-      context.fillStyle = 'rgb(250,0,0)';
-      context.fillRect(10, 10, 55, 50);
-
-      context.fillStyle = 'rgba(0, 0, 250, 0.5)';
-      context.fillRect(30, 30, 55, 50);
-    </script>
-  </body>
-</html></textarea>
     <iframe id=preview></iframe>
     <script>
-        var default_statment = "Enter Your Code Here";
+      var default_statment = "Enter Your Code Here";
         var editor = CodeMirror.fromTextArea(document.getElementById("codetext"), {
         lineNumbers: true,
         mode: LANGUAGE_MODE_MAP[selected_lang],
         matchBrackets: true,
         });
-        <button type="button" autofocus="autofocus">Run!</button>
-      
-      function updatePreview() {
-        var previewFrame = document.getElementById('preview');
-        var preview =  previewFrame.contentDocument ||  previewFrame.contentWindow.document;
-        preview.open();
-        preview.write(editor.getValue());
-        preview.close();
-      }
-      setTimeout(updatePreview, 300);
     </script>
   </body>
+  <button type="button" autofocus="autofocus">Run!</button>
 </html>
