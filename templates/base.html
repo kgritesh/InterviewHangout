@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html  class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>{% block Title %} Code Hangout {% end %}</title>
+  <meta name="author" content=""/>
+  <meta name="viewport" content="width=device-width"/>
+
+  <!-- TODD: Keywords for SEO -->
+  <!-- TODD: Add Modernizr -->
+
+  {% block HeaderScripts %}
+     <!-- TODD: Add Compressed version of css -->
+     <link href="{{ static_url("styles/style.css") }}" rel="stylesheet" type="text/css">
+     <link href="{{ static_url("styles/codemirror.css") }}" rel="stylesheet" type="text/css">
+     <script src="{{ static_url("js/libs/modernizr-2.5.3.min.js") }}" ></script>
+  {% end %}
+
+</head>
+
+<body>
+<p id="jsnotice">
+  Javascript is currently disabled. This site requires Javascript to function correctly.
+  Please <a href="http://enable-javascript.com/"> enable Javascript in your browser</a>!
+</p>
+  {% block Body %}
+     <header>
+       {% block Header %}
+       {% end %}
+     </header>
+
+     <div role="main" id="contentwrapper">
+       {% block Content %}
+       {% end %}
+     </div>
+
+     <div class="footer">
+       {% block Footer %}
+       {% end %}
+     </div>
+
+  {% end %}
+  {% block Scripts %}
+    <script src="{{ static_url("js/libs/jquery-1.7.min.js") }}"></script>
+    <script src="{{ static_url("js/libs/codemirror.min.js") }}"></script>
+    <script src="{{ static_url("js/common.js") }}"></script>
+  {% end %}
+</body>
+</html>
+

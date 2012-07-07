@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Code Hangout{% end %}
+
+{% block Header %}
+<h2 align="center">Code Hangout</h2>
+{% end %}
+
+{% block Content %}
+  <div id="codearea">
+    <div id="language-selector">
+      <a href="#clike"> C </a>
+      <a href="#cplus"> C++ </a>
+      <a href="#csharp"> C# </a>
+      <a href="#closure"> Closure </a>
+      <a href="#haskel"> Haskel </a>
+      <a href="#java"> Java </a>
+      <a class="selected-lang" href="#javascript"> Javascript </a>
+      <a href="#perl"> Perl </a>
+      <a href="#php"> PHP </a>
+      <a href="#pythondd"> Python </a>
+      <a href="#ruby"> Ruby </a>
+    </div>
+    <input type="button" name="compile" id="compilebtn" value="Run Program"/>
+    <textarea id="codetext" name="codetext" cols="40"></textarea>
+    <span class="areadivider"> Output Area</span>
+    <textarea id="outputarea" name="outputarea" cols="40" rows="100"></textarea>
+  </div>
+
+{% end %}
