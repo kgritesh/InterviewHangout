@@ -1,0 +1,62 @@
+<html>
+
+<head>
+
+<title>Code Area Collaboration
+</title>
+<style type="text/css" media="screen">
+                        body {
+                                overflow: hidden;
+                        }
+
+                        #editor {
+                                margin: 10;
+                                position: absolute;
+                                top: 30;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                        }
+                </style>
+
+<script src="/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+                <script src="/socket.io/socket.io.js"></script>
+                <script src="/share/share.js"></script>
+                <script src="/share/ace.js"></script>
+		<script src="/channel/bcsocket.js"></script>
+<script>
+    window.onload = function() {
+        var editor = ace.edit("editor");
+//                editor.setReadOnly(true);
+
+                var docName = "pad:" + document.location.hash.slice(1);
+
+                sharejs.open(docName, 'text', function(doc, error) {
+                        if (error) {
+                                console.error(error);
+                                return;
+                        }
+
+                        if (doc.created) {
+                                doc.submitOp({i:'Your code goes here!'});
+                        }
+
+                        doc.attach_ace(editor);
+                });
+    };
+                </script>
+
+
+
+
+
+</head>
+<body>
+<h1>Code Area -with Sharing</h1>
+
+<div id="editor"></div>
+
+
+
+</body>
+</html>
