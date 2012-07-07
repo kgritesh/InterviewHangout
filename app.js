@@ -7,9 +7,11 @@ app.use(express.logger());
 app.use(express.bodyParser());
 app.use(express.cookieParser());
 app.use(express.session({ secret: "droidToChromeRMR" }));
+app.use('/static', express.static(__dirname + '/static'));
+app.set('views', __dirname + '/templates');
 
 app.get('/', function(req, res){
-    res.send("Hello World");
+  res.sendfile('templates/index.html');
 });
 
 app.listen(8000);

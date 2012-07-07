@@ -1,30 +1,44 @@
-{% extends "base.html" %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html  class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-{% block title %}Code Hangout{% end %}
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Code Hangout</title>
+  <meta name="author" content=""/>
+  <meta name="viewport" content="width=device-width"/>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <link href="/static/css/codemirror.css" rel="stylesheet" type="text/css">
+</head>
 
-{% block Header %}
-<h2 align="center">Code Hangout</h2>
-{% end %}
-
-{% block Content %}
-  <div id="codearea">
-    <div id="language-selector">
-      <a href="#clike"> C </a>
-      <a href="#cplus"> C++ </a>
-      <a href="#csharp"> C# </a>
-      <a href="#closure"> Closure </a>
-      <a href="#haskel"> Haskel </a>
-      <a href="#java"> Java </a>
-      <a class="selected-lang" href="#javascript"> Javascript </a>
-      <a href="#perl"> Perl </a>
-      <a href="#php"> PHP </a>
-      <a href="#pythondd"> Python </a>
-      <a href="#ruby"> Ruby </a>
+<body>
+  <div role="main" id="contentwrapper">
+    <div id="codearea">
+      <div id="language-selector">
+	<a href="#clike"> C </a>
+	<a href="#cplus"> C++ </a>
+	<a href="#csharp"> C# </a>
+	<a href="#closure"> Closure </a>
+	<a href="#haskel"> Haskel </a>
+	<a href="#java"> Java </a>
+	<a class="selected-lang" href="#javascript"> Javascript </a>
+	<a href="#perl"> Perl </a>
+	<a href="#php"> PHP </a>
+	<a href="#pythondd"> Python </a>
+	<a href="#ruby"> Ruby </a>
+      </div>
+      <input type="button" name="compile" id="compilebtn" value="Run Program"/>
+      <textarea id="codetext" name="codetext" cols="40"></textarea>
+      <span class="areadivider"> Output Area</span>
+      <textarea id="outputarea" name="outputarea" cols="40" rows="100"></textarea>
     </div>
-    <input type="button" name="compile" id="compilebtn" value="Run Program"/>
-    <textarea id="codetext" name="codetext" cols="40"></textarea>
-    <span class="areadivider"> Output Area</span>
-    <textarea id="outputarea" name="outputarea" cols="40" rows="100"></textarea>
   </div>
+  <script src="/static/js/lib/jquery-1.7.min.js"></script>
+  <script src="/static/js/lib/codemirror.min.js"></script>
+  <script src="/static/js/common.js"></script>
+</body>
+</html>
 
-{% end %}
