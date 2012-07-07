@@ -2,7 +2,7 @@
 // the TimePass function. Below that, at the bottom of the file,
 // some utilities are defined.
 
-// TimePass is the only global var we claim
+// TimePass is the only global var I claim
 var TimePass = (function() {
   // This is the function that produces an editor instance. Its
   // closure is used to store the editor state.
